@@ -7,8 +7,12 @@ const TextRepeaterButton = () => {
     textArr.push(<span key={i}>I like this text</span>)
   }
 
+  const handleClick = () => {
+    setRepetitions(repetitions + 1);
+  }
+
   return (
-    <button className="TextRepeaterButton">
+    <button onClick={handleClick} className="TextRepeaterButton">
       <span>{textArr}</span>
     </button>
   )
