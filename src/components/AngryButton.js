@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 const AngryButton = () => {
+  const [anger, setAnger] = useState(0);
   return (
-    <button className="AngryButton">
-      {/* When the threshold is not reached */} <span>Don't click me too much</span> <span className="emoji">🥺</span>
-      {/* When the threshold is reached  */} <span>Rawr!</span>
+    <button style={{ backgroundColor: `rgba(255,0,0,${anger})` }} className="AngryButton">
+      { anger < 1 &&  <span>Don't click me too much 🥺</span> }
+      { anger > 1 && <span>Rawr!</span> }
     </button>
   )
 }
