@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import { useState } from "react";
+
 import './App.css';
 import AngryButton from './components/AngryButton';
 import CounterButton from './components/CounterButton';
@@ -6,13 +7,17 @@ import LightSwitchButton from './components/LightSwitchButton';
 import TextRepeaterButton from './components/TextRepeaterButton';
 
 function App() {
+  const [light, setLight] = useState('off');
+  const darkMode = (light === 'off') ? 'dark' : '';
+  const switchLight = () => setLight(light === "on" ? "off" : "on");
+
   return (
-    <div className="App">
+    <div className={`App ${darkMode}`}>
       <h1>Fancy buttons!</h1>
       <section>
         <AngryButton />
         <CounterButton />
-        <LightSwitchButton />
+        <LightSwitchButton light={light} switchLight={switchLight} />
         <TextRepeaterButton />
       </section>
     </div>

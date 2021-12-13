@@ -5,6 +5,13 @@
   transition: all 300ms linear;
 }
 
+.App.dark,
+.App.dark button {
+  background: #222;
+  border-color: white;
+  color: white;
+}
+
 .App > h1 {
   margin: 0;
   padding: 1em;

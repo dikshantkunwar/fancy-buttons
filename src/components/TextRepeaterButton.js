@@ -8,7 +8,7 @@ const TextRepeaterButton = () => {
   }
 
   const handleClick = () => {
-    setRepetitions(repetitions + 1);
+    setReps(reps + 1);
   }
 
   return (
